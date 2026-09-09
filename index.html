@@ -1,0 +1,2226 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muh. Aksa · AI Engineer &amp; Software Developer Portfolio</title>
+    <meta name="description" content="Portfolio resmi Muh. Aksa, AI Engineer & Software Developer. Finalis Top 80 Nasional DIGDAYA x HACKATHON 2026, membangun solusi AI dan software berdampak sosial." />
+    <link rel="canonical" href="https://portfolio-aksa.netlify.app/" />
+
+    <!-- Open Graph / LinkedIn / WhatsApp -->
+    <meta property="og:title" content="Muh. Aksa · AI Engineer &amp; Software Developer" />
+    <meta property="og:description" content="Portfolio resmi Muh. Aksa, AI Engineer & Software Developer. Finalis Top 80 Nasional DIGDAYA x HACKATHON 2026, membangun solusi AI dan software berdampak sosial." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://portfolio-aksa.netlify.app/" />
+    <meta property="og:image" content="https://portfolio-aksa.netlify.app/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Muh. Aksa · AI Engineer &amp; Software Developer" />
+    <meta name="twitter:description" content="Portfolio resmi Muh. Aksa, AI Engineer & Software Developer. Finalis Top 80 DIGDAYA x HACKATHON 2026." />
+    <meta name="twitter:image" content="https://portfolio-aksa.netlify.app/assets/images/og-image.jpg" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon" />
+
+    <!-- Preconnect untuk performa -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <style>
+        /* ================================================================
+           1.  RESET & VARIABLES
+           ================================================================ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-bg: #05050a;
+            --color-surface: rgba(255, 255, 255, 0.04);
+            --color-surface-hover: rgba(255, 255, 255, 0.08);
+            --color-border: rgba(255, 255, 255, 0.06);
+            --color-border-hover: rgba(0, 229, 255, 0.3);
+            --color-text: #f1f5f9;
+            --color-text-secondary: #adb7c6;
+            --color-text-muted: #64748b;
+            --color-accent: #00e5ff;
+            --color-accent-dim: rgba(0, 229, 255, 0.12);
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            --transition-smooth: 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            font-family: var(--font-family);
+            background: var(--color-bg);
+            color: var(--color-text);
+            line-height: 1.7;
+            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            display: flex;
+            flex-direction: column;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: var(--color-bg);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--color-accent);
+            border-radius: var(--radius-full);
+        }
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-accent) var(--color-bg);
+        }
+
+        .skip-link {
+            position: absolute;
+            top: -100%;
+            left: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-accent);
+            color: #05050a;
+            font-weight: 700;
+            border-radius: var(--radius-sm);
+            z-index: 10000;
+            text-decoration: none;
+            transition: top 0.2s ease;
+        }
+        .skip-link:focus {
+            top: 1rem;
+        }
+
+        .container {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+            width: 100%;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-weight: 800;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+        }
+
+        a {
+            color: var(--color-accent);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        a:hover {
+            color: #fff;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* ================================================================
+           BUTTONS
+           ================================================================ */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.6rem;
+            padding: 0.75rem 1.8rem;
+            border-radius: var(--radius-full);
+            font-weight: 700;
+            font-size: 0.95rem;
+            font-family: inherit;
+            border: 1px solid transparent;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            text-decoration: none;
+            background: transparent;
+            color: var(--color-text);
+            min-height: 48px;
+        }
+
+        .btn--primary {
+            background: var(--color-accent);
+            color: #05050a;
+            border-color: var(--color-accent);
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.2);
+        }
+        .btn--primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(0, 229, 255, 0.3);
+            background: #00d4e8;
+            border-color: #00d4e8;
+            color: #05050a;
+        }
+
+        .btn--secondary {
+            background: var(--color-surface);
+            border-color: var(--color-border);
+            color: var(--color-text);
+        }
+        .btn--secondary:hover {
+            background: var(--color-surface-hover);
+            border-color: var(--color-accent);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        .btn--small {
+            padding: 0.4rem 1.2rem;
+            font-size: 0.8rem;
+            min-height: 36px;
+        }
+
+        /* ================================================================
+           NAVBAR
+           ================================================================ */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 999;
+            background: rgba(5, 5, 10, 0.8);
+            backdrop-filter: blur(12px) saturate(1.2);
+            -webkit-backdrop-filter: blur(12px) saturate(1.2);
+            border-bottom: 1px solid var(--color-border);
+            padding: 0.75rem 0;
+            transition: background var(--transition-smooth);
+        }
+
+        .navbar__inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+            color: var(--color-accent);
+            text-decoration: none;
+        }
+
+        /* Hamburger */
+        .hamburger {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 10;
+        }
+        .hamburger span {
+            display: block;
+            width: 26px;
+            height: 2.5px;
+            background: var(--color-text);
+            border-radius: 4px;
+            transition: all 0.25s ease;
+            transform-origin: center;
+        }
+        .hamburger[aria-expanded="true"] span:nth-child(1) {
+            transform: translateY(7.5px) rotate(45deg);
+            background: var(--color-accent);
+        }
+        .hamburger[aria-expanded="true"] span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+        .hamburger[aria-expanded="true"] span:nth-child(3) {
+            transform: translateY(-7.5px) rotate(-45deg);
+            background: var(--color-accent);
+        }
+
+        /* Nav Links Mobile (drawer) */
+        .nav-links {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 320px;
+            height: 100vh;
+            background: rgba(5, 5, 10, 0.96);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-left: 1px solid var(--color-border);
+            padding: 5rem 2rem 2rem;
+            transition: right 0.35s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        .nav-links[aria-hidden="false"] {
+            right: 0;
+        }
+        .nav-links ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+        .nav-links a {
+            color: var(--color-text-secondary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+            border-bottom: 2px solid transparent;
+            display: inline-block;
+            transition: all 0.2s ease;
+        }
+        .nav-links a:hover {
+            color: #fff;
+            border-bottom-color: var(--color-accent);
+        }
+        .nav-cta {
+            margin-top: 0.5rem;
+            background: var(--color-accent) !important;
+            color: #05050a !important;
+            padding: 0.6rem 1.8rem !important;
+            border-radius: var(--radius-full);
+            text-align: center;
+            border-bottom: none !important;
+            font-weight: 700 !important;
+        }
+        .nav-cta:hover {
+            background: #00d4e8 !important;
+            color: #05050a !important;
+            transform: translateX(0) !important;
+        }
+
+        /* LANGUAGE SWITCHER (Segmented Control) */
+        .lang-switcher {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-full);
+            padding: 0.15rem 0.15rem;
+            backdrop-filter: blur(4px);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: none;
+            color: var(--color-text-secondary);
+            font-family: var(--font-family);
+            font-weight: 700;
+            font-size: 0.75rem;
+            padding: 0.3rem 0.8rem;
+            border-radius: var(--radius-full);
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+            min-width: 32px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        .lang-btn:hover {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .lang-btn.active {
+            background: var(--color-accent);
+            color: #05050a;
+            box-shadow: 0 2px 10px rgba(0, 229, 255, 0.25);
+        }
+
+        .lang-btn.active:hover {
+            background: var(--color-accent);
+            color: #05050a;
+        }
+
+        .lang-divider {
+            color: var(--color-text-muted);
+            font-size: 0.7rem;
+            opacity: 0.3;
+            user-select: none;
+        }
+
+        /* Desktop: switcher di navbar */
+        .lang-switcher--desktop {
+            display: none;
+            margin-left: auto;
+            margin-right: 0.5rem;
+        }
+
+        /* Mobile: switcher di dalam menu */
+        .lang-switcher--mobile {
+            display: flex;
+            margin-top: 1.5rem;
+            padding: 0.25rem;
+            width: 100%;
+            justify-content: center;
+        }
+
+        @media (min-width: 768px) {
+            .hamburger {
+                display: none;
+            }
+            .nav-links {
+                position: static;
+                width: auto;
+                height: auto;
+                background: none;
+                backdrop-filter: none;
+                border-left: none;
+                padding: 0;
+                overflow-y: visible;
+                transition: none;
+                flex-direction: row;
+                align-items: center;
+            }
+            .nav-links ul {
+                flex-direction: row;
+                gap: 2rem;
+                align-items: center;
+            }
+            .nav-links a {
+                font-size: 0.95rem;
+                padding: 0.25rem 0;
+                color: var(--color-text-secondary);
+                border-bottom: 2px solid transparent;
+            }
+            .nav-links a:hover {
+                color: #fff;
+                border-bottom-color: var(--color-accent);
+            }
+            .nav-cta {
+                padding: 0.5rem 1.5rem !important;
+                margin-top: 0;
+            }
+            .lang-switcher--desktop {
+                display: flex;
+            }
+            .lang-switcher--mobile {
+                display: none !important;
+            }
+            .navbar__inner {
+                flex-wrap: nowrap;
+            }
+            .nav-links {
+                flex: 1;
+                justify-content: flex-end;
+                gap: 1rem;
+            }
+        }
+
+        /* ================================================================
+           HERO
+           ================================================================ */
+        .hero {
+            padding: 8rem 0 4rem;
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+        }
+        .hero__inner {
+            width: 100%;
+        }
+        .hero__badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-accent-dim);
+            border: 1px solid rgba(0, 229, 255, 0.15);
+            padding: 0.3rem 1rem 0.3rem 0.8rem;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+        }
+        .hero h1 {
+            font-size: clamp(2.8rem, 12vw, 5.5rem);
+            font-weight: 900;
+            line-height: 1.05;
+            letter-spacing: -0.03em;
+            margin-bottom: 0.5rem;
+        }
+        .hero h1 .highlight {
+            background: linear-gradient(135deg, var(--color-accent), #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .hero__sub {
+            font-size: clamp(1.1rem, 2.5vw, 1.6rem);
+            color: var(--color-text-secondary);
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.25rem 0.75rem;
+            margin-bottom: 1rem;
+        }
+        .hero__typing {
+            font-weight: 700;
+            color: var(--color-accent);
+            min-width: 120px;
+            display: inline-block;
+        }
+        .hero__desc {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            max-width: 580px;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+        }
+        .hero__actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 2.5rem;
+        }
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            color: var(--color-text-secondary);
+            font-size: 1.2rem;
+            transition: all var(--transition-smooth);
+        }
+        .social-links a:hover {
+            color: var(--color-accent);
+            border-color: var(--color-accent);
+            transform: translateY(-4px);
+            background: var(--color-accent-dim);
+        }
+
+        /* ================================================================
+           PROOF BAR
+           ================================================================ */
+        .proof-bar {
+            padding: 2.5rem 0;
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+            background: var(--color-surface);
+            backdrop-filter: blur(4px);
+        }
+        .proof-bar__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            text-align: center;
+        }
+        @media (min-width: 600px) {
+            .proof-bar__inner {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        .proof-item {
+            display: flex;
+            flex-direction: column;
+        }
+        .proof-number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: var(--color-accent);
+            line-height: 1.2;
+        }
+        .proof-label {
+            font-size: 0.85rem;
+            color: var(--color-text-secondary);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+
+        /* ================================================================
+           SECTIONS
+           ================================================================ */
+        .section {
+            padding: 4rem 0;
+        }
+        .section--dark {
+            background: rgba(255, 255, 255, 0.02);
+            border-top: 1px solid var(--color-border);
+            border-bottom: 1px solid var(--color-border);
+        }
+        @media (min-width: 768px) {
+            .section {
+                padding: 5rem 0;
+            }
+        }
+
+        .section__label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-accent-dim);
+            border: 1px solid rgba(0, 229, 255, 0.1);
+            padding: 0.2rem 1rem 0.2rem 0.8rem;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--color-accent);
+            margin-bottom: 0.75rem;
+        }
+        .section__title {
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .section__title .gradient-text {
+            background: linear-gradient(135deg, var(--color-accent), #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .section__desc {
+            font-size: 1.05rem;
+            color: var(--color-text-secondary);
+            max-width: 640px;
+            margin-bottom: 2.5rem;
+        }
+
+        /* ================================================================
+           ABOUT
+           ================================================================ */
+        .about__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+        }
+        @media (min-width: 768px) {
+            .about__grid {
+                grid-template-columns: 2fr 1fr;
+            }
+        }
+        .about__text p {
+            color: var(--color-text-secondary);
+            font-size: 1.05rem;
+            margin-bottom: 1rem;
+        }
+        .about__text strong {
+            color: #fff;
+        }
+        .about__highlight {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-top: 1.5rem;
+            padding: 1rem 1.25rem;
+            background: var(--color-surface);
+            border-left: 3px solid var(--color-accent);
+            border-radius: var(--radius-sm);
+            color: var(--color-text-secondary);
+        }
+        .about__highlight i {
+            color: var(--color-accent);
+            font-size: 1.2rem;
+        }
+        .about__extra h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.25rem;
+            color: #fff;
+        }
+        .about__extra ul {
+            list-style: none;
+            padding: 0;
+        }
+        .about__extra li {
+            color: var(--color-text-secondary);
+            padding: 0.2rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .about__extra li:last-child {
+            border-bottom: none;
+        }
+
+        /* ================================================================
+           SKILLS
+           ================================================================ */
+        .skills__list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+        .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            padding: 0.5rem 1.2rem;
+            border-radius: var(--radius-full);
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            transition: all var(--transition-smooth);
+        }
+        .skill-tag i {
+            color: var(--color-accent);
+            font-size: 1rem;
+            width: 18px;
+            text-align: center;
+        }
+        .skill-tag:hover {
+            border-color: var(--color-accent);
+            background: var(--color-accent-dim);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        /* ================================================================
+           PROJECTS
+           ================================================================ */
+        .projects__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .projects__grid {
+                grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            }
+        }
+
+        .project-card {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            transition: all var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+        }
+        .project-card:hover {
+            border-color: var(--color-border-hover);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        .project__image {
+            overflow: hidden;
+            background: #0a0a14;
+            border-bottom: 1px solid var(--color-border);
+        }
+        .project__image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        .project-card:hover .project__image img {
+            transform: scale(1.03);
+        }
+
+        .project__content {
+            padding: 1.5rem 1.5rem 1.8rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .project__tag {
+            display: inline-block;
+            background: var(--color-accent-dim);
+            color: var(--color-accent);
+            font-size: 0.6rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            padding: 0.2rem 0.8rem;
+            border-radius: var(--radius-full);
+            align-self: flex-start;
+            margin-bottom: 0.5rem;
+            border: 1px solid rgba(0, 229, 255, 0.1);
+        }
+        .project__content h3 {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+        .project__content p {
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+            line-height: 1.7;
+            flex: 1;
+            margin-bottom: 1rem;
+        }
+        .project__tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.4rem;
+            margin-bottom: 1rem;
+        }
+        .project__tech span {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.15rem 0.7rem;
+            border-radius: var(--radius-full);
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: var(--color-text-secondary);
+            border: 1px solid var(--color-border);
+        }
+        .project__links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 0.6rem;
+            margin-top: auto;
+        }
+        .project__status {
+            font-size: 0.7rem;
+            color: var(--color-text-muted);
+            background: var(--color-surface);
+            padding: 0.1rem 0.6rem;
+            border-radius: var(--radius-full);
+            border: 1px solid var(--color-border);
+        }
+
+        /* ================================================================
+           EXPERIENCE & EDUCATION
+           ================================================================ */
+        .experience__item,
+        .education__item {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            transition: border-color 0.2s ease;
+        }
+        .experience__item:hover,
+        .education__item:hover {
+            border-color: var(--color-border-hover);
+        }
+        .experience__item h3,
+        .education__item h3 {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #fff;
+        }
+        .experience__meta,
+        .education__meta {
+            color: var(--color-accent);
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 0.5rem;
+        }
+        .experience__item ul,
+        .education__item ul {
+            padding-left: 1.5rem;
+            color: var(--color-text-secondary);
+        }
+        .experience__item li,
+        .education__item li {
+            margin-bottom: 0.25rem;
+        }
+        .experience__item a,
+        .education__item a {
+            color: var(--color-accent);
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        /* ================================================================
+           CERTIFICATIONS
+           ================================================================ */
+        .certs__grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 0.75rem;
+        }
+        @media (min-width: 600px) {
+            .certs__grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (min-width: 992px) {
+            .certs__grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .cert-card {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-sm);
+            padding: 0.8rem 1.2rem;
+            transition: all 0.2s ease;
+        }
+        .cert-card:hover {
+            border-color: var(--color-accent);
+            background: var(--color-accent-dim);
+        }
+        .cert-card i {
+            font-size: 1.8rem;
+            color: var(--color-accent);
+            opacity: 0.7;
+            width: 36px;
+            text-align: center;
+            flex-shrink: 0;
+        }
+        .cert-card>div {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+        }
+        .cert-name {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: #fff;
+            line-height: 1.2;
+        }
+        .cert-issuer {
+            font-size: 0.75rem;
+            color: var(--color-text-secondary);
+        }
+        .cert-id {
+            font-size: 0.65rem;
+            color: var(--color-text-muted);
+            font-family: monospace;
+            margin-top: 0.1rem;
+        }
+        .cert-link {
+            font-size: 0.7rem;
+            font-weight: 700;
+            color: var(--color-accent);
+            text-decoration: none;
+            margin-top: 0.1rem;
+        }
+        .cert-link:hover {
+            text-decoration: underline;
+            color: #fff;
+        }
+
+        /* ================================================================
+           ACHIEVEMENTS
+           ================================================================ */
+        .achievements__list {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        @media (min-width: 600px) {
+            .achievements__list {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        .achievements__list li {
+            background: var(--color-surface);
+            border: 1px solid var(--color-border);
+            border-radius: var(--radius-md);
+            padding: 1.5rem;
+            border-left: 4px solid var(--color-accent);
+            color: var(--color-text-secondary);
+            font-size: 0.95rem;
+        }
+        .achievements__list li strong {
+            display: block;
+            color: #fff;
+            font-size: 1.05rem;
+            margin-bottom: 0.2rem;
+        }
+
+        /* ================================================================
+           CONTACT
+           ================================================================ */
+        .contact__inner {
+            text-align: center;
+        }
+        .contact__links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        /* ================================================================
+           FOOTER
+           ================================================================ */
+        .footer {
+            padding: 3rem 0 1.5rem;
+            border-top: 1px solid var(--color-border);
+            margin-top: auto;
+        }
+        .footer__inner {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            text-align: center;
+        }
+        @media (min-width: 600px) {
+            .footer__inner {
+                grid-template-columns: 2fr 1fr 1fr;
+                text-align: left;
+                align-items: start;
+            }
+        }
+        .footer__brand .logo {
+            font-size: 1.3rem;
+        }
+        .footer__brand p {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+            margin-top: 0.2rem;
+        }
+        .footer__links {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+        }
+        .footer__links a {
+            color: var(--color-text-secondary);
+            font-size: 0.9rem;
+        }
+        .footer__links a:hover {
+            color: #fff;
+        }
+        .footer__social {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        @media (min-width: 600px) {
+            .footer__social {
+                justify-content: flex-start;
+            }
+        }
+        .footer__social a {
+            color: var(--color-text-secondary);
+            font-size: 1.2rem;
+            transition: color 0.2s ease;
+        }
+        .footer__social a:hover {
+            color: var(--color-accent);
+        }
+        .footer__copy {
+            grid-column: 1 / -1;
+            font-size: 0.85rem;
+            color: var(--color-text-muted);
+            border-top: 1px solid var(--color-border);
+            padding-top: 1.5rem;
+            margin-top: 0.5rem;
+        }
+
+        /* ================================================================
+           BACK TO TOP
+           ================================================================ */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--color-accent);
+            color: #05050a;
+            border: none;
+            font-size: 1.2rem;
+            cursor: pointer;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            transition: all var(--transition-smooth);
+            box-shadow: 0 4px 20px rgba(0, 229, 255, 0.25);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .back-to-top:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 229, 255, 0.4);
+            background: #00d4e8;
+        }
+
+        /* ================================================================
+           RESPONSIVE TWEAKS
+           ================================================================ */
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            .hero__actions .btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.75rem 1rem;
+            }
+            .hero__desc {
+                font-size: 0.95rem;
+            }
+            .proof-bar__inner {
+                gap: 1rem;
+            }
+            .proof-number {
+                font-size: 1.8rem;
+            }
+            .proof-label {
+                font-size: 0.7rem;
+            }
+            .section__title {
+                font-size: 1.8rem;
+            }
+            .project__content {
+                padding: 1.2rem;
+            }
+            .cert-card {
+                padding: 0.6rem 1rem;
+                gap: 0.75rem;
+            }
+            .cert-name {
+                font-size: 0.8rem;
+            }
+            .back-to-top {
+                bottom: 1.5rem;
+                right: 1.5rem;
+                width: 44px;
+                height: 44px;
+            }
+            .social-links a {
+                width: 44px;
+                height: 44px;
+                font-size: 1rem;
+            }
+        }
+
+        /* ================================================================
+           AKSESIBILITAS: FOCUS & REDUCED MOTION
+           ================================================================ */
+        :focus-visible {
+            outline: 2px solid var(--color-accent);
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+        :focus:not(:focus-visible) {
+            outline: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            .project-card:hover .project__image img {
+                transform: none !important;
+            }
+            .project-card:hover {
+                transform: none !important;
+            }
+            .btn:hover {
+                transform: none !important;
+            }
+            .social-links a:hover {
+                transform: none !important;
+            }
+            .skill-tag:hover {
+                transform: none !important;
+            }
+            .cert-card:hover {
+                transform: none !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== SKIP TO CONTENT ===== -->
+    <a href="#main" class="skip-link">Langsung ke konten utama</a>
+
+    <!-- ===== HEADER / NAVBAR ===== -->
+    <header class="navbar" role="banner" aria-label="Navigasi utama">
+        <div class="container navbar__inner">
+            <a href="/" class="logo" aria-label="Beranda">aksa.</a>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle navigasi" aria-expanded="false" aria-controls="navLinks">
+                <span></span><span></span><span></span>
+            </button>
+
+            <nav id="navLinks" class="nav-links" aria-label="Navigasi utama" role="navigation">
+                <ul>
+                    <li><a href="#about" data-i18n="nav_about">Tentang</a></li>
+                    <li><a href="#skills" data-i18n="nav_skills">Keahlian</a></li>
+                    <li><a href="#projects" data-i18n="nav_projects">Proyek</a></li>
+                    <li><a href="#experience" data-i18n="nav_experience">Pengalaman</a></li>
+                    <li><a href="#education" data-i18n="nav_education">Pendidikan</a></li>
+                    <li><a href="#certifications" data-i18n="nav_certifications">Sertifikasi</a></li>
+                    <li><a href="#achievements" data-i18n="nav_achievements">Prestasi</a></li>
+                    <li><a href="#contact" class="nav-cta" data-i18n="nav_contact">Hubungi</a></li>
+                </ul>
+
+      <!-- Language Switcher - Desktop -->
+                <div class="lang-switcher lang-switcher--desktop" role="group" aria-label="Pilihan bahasa">
+                   <button class="lang-btn active" data-lang="id" aria-pressed="true">ID</button>
+                   <span class="lang-divider">|</span>
+                   <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+                <!-- Language Switcher - Mobile -->
+                <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Pilihan bahasa">
+                    <button class="lang-btn active" data-lang="id" aria-pressed="true">ID</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="main">
+
+        <!-- ===== HERO ===== -->
+        <section class="hero" id="home">
+            <div class="container hero__inner">
+                <div class="hero__badge">
+                    <i class="fas fa-bolt" aria-hidden="true"></i>
+                    <span data-i18n="hero_badge">Open for Internship</span>
+                </div>
+                <h1>
+                    Muh. <span class="highlight">Aksa</span>
+                </h1>
+                <p class="hero__sub">
+                    <span data-i18n="hero_sub1">AI Engineer &amp; Software Developer</span>
+                    <span class="hero__typing" id="typingText" aria-live="polite">mahasiswa ITH</span>
+                </p>
+                <p class="hero__desc" data-i18n="hero_desc">
+                    Saya membangun sistem AI terapan dan perangkat lunak produksi untuk menyelesaikan masalah nyata. 
+                    Finalis Top 80 Nasional DIGDAYA x HACKATHON 2026 dan penggagas program literasi digital KREASI-HP.
+                </p>
+                <div class="hero__actions">
+                    <a href="#projects" class="btn btn--primary"><i class="fas fa-arrow-right" aria-hidden="true"></i> <span data-i18n="hero_btn_projects">Lihat Proyek</span></a>
+                    <a href="assets/cv/CV_Muh_Aksa_AI_SoftwareEngineer.pdf" download class="btn btn--secondary"><i class="fas fa-file-pdf" aria-hidden="true"></i> <span data-i18n="hero_btn_cv">Download CV</span></a>
+                </div>
+                <div class="social-links" aria-label="Tautan media sosial">
+                    <a href="https://www.linkedin.com/in/muh-aksa/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    <a href="https://github.com/aksaex" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                    <a href="https://id.jobstreet.com/id/profiles/muh-aksa-xFF6VH8BlX" target="_blank" rel="noopener noreferrer" aria-label="Jobstreet"><i class="fas fa-briefcase" aria-hidden="true"></i></a>
+                    <a href="mailto:aksafigma@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+                    <a href="https://kreasi-hp.netlify.app/" target="_blank" rel="noopener noreferrer" aria-label="KREASI-HP"><i class="fas fa-graduation-cap" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROOF BAR ===== -->
+        <section class="proof-bar" aria-label="Statistik pencapaian">
+            <div class="container proof-bar__inner">
+                <div class="proof-item">
+                    <span class="proof-number" data-count="80">80</span>
+                    <span class="proof-label" data-i18n="proof_1">Top 80 Nasional Hackathon</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-number" data-count="15">15</span>
+                    <span class="proof-label" data-i18n="proof_2">Sertifikasi &amp; Kredensial</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-number" data-count="8">8</span>
+                    <span class="proof-label" data-i18n="proof_3">Siswa Binaan Deploy Website</span>
+                </div>
+                <div class="proof-item">
+                    <span class="proof-number" data-count="3">3</span>
+                    <span class="proof-label" data-i18n="proof_4">Proyek Flagship</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ABOUT ===== -->
+        <section id="about" class="section">
+            <div class="container">
+                <span class="section__label"><i class="fas fa-user-astronaut" aria-hidden="true"></i> <span data-i18n="about_label">Tentang Saya</span></span>
+                <h2 class="section__title">
+                    <span data-i18n="about_title_before">Membangun</span>
+                    <span class="gradient-text" data-i18n="about_title_highlight">Dampak</span>
+                    <span data-i18n="about_title_after">Lewat Kode</span>
+                </h2>
+                <div class="about__grid">
+                    <div class="about__text">
+                        <p data-i18n="about_p1">Saya <strong>Muh. Aksa</strong>, mahasiswa semester 7 Ilmu Komputer di <strong>Institut Teknologi Bacharuddin Jusuf Habibie (ITH)</strong> dengan spesialisasi <strong>Artificial Intelligence</strong> dan <strong>Pengembangan Software</strong>.</p>
+                        <p data-i18n="about_p2">Saya aktif menerjemahkan pembelajaran kelas menjadi solusi praktis melalui hackathon nasional, program komunitas, dan proyek independen. Pendiri <strong>Agro Celebes</strong> — agri-fintech dengan PWA offline-first dan sistem kredit berbasis satelit Sentinel-2 — serta penggagas <strong>KREASI-HP</strong>, program literasi digital yang mengajarkan coding via smartphone kepada 8 siswa SMA di Barru.</p>
+                        <p data-i18n="about_p3">Saya percaya bahwa teknologi harus memberikan dampak sosial yang nyata. Saya terbuka untuk peluang <strong>magang AI Engineer</strong> atau <strong>Software Developer</strong>.</p>
+                        <div class="about__highlight">
+                            <i class="fas fa-map-pin" aria-hidden="true"></i>
+                            <span data-i18n="about_highlight"><strong>Barru, Sulawesi Selatan</strong> · Lulus 2027</span>
+                        </div>
+                    </div>
+                    <div class="about__extra">
+                        <h3 data-i18n="about_lang_title">Bahasa</h3>
+                        <ul>
+                            <li data-i18n="about_lang_ind"><strong>Indonesia</strong> — Native</li>
+                            <li data-i18n="about_lang_eng"><strong>Inggris</strong> — Professional Working Proficiency</li>
+                        </ul>
+                        <h3 style="margin-top:1.5rem;" data-i18n="about_interests">Minat</h3>
+                        <ul>
+                            <li data-i18n="about_i1">Applied AI / Machine Learning</li>
+                            <li data-i18n="about_i2">RAG &amp; LLM</li>
+                            <li data-i18n="about_i3">Software Architecture</li>
+                            <li data-i18n="about_i4">Social Impact Technology</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== SKILLS ===== -->
+        <section id="skills" class="section section--dark">
+            <div class="container">
+                <span class="section__label"><i class="fas fa-microchip" aria-hidden="true"></i> <span data-i18n="skills_label">Keahlian Teknis</span></span>
+                <h2 class="section__title"><span data-i18n="skills_title">Tech Stack &amp; Spesialisasi</span></h2>
+                <p class="section__desc" data-i18n="skills_desc">Kombinasi antara kecerdasan buatan, rekayasa perangkat lunak, dan keamanan siber.</p>
+                <div class="skills__list">
+                    <span class="skill-tag"><i class="fas fa-brain" aria-hidden="true"></i> AI / Machine Learning</span>
+                    <span class="skill-tag"><i class="fas fa-robot" aria-hidden="true"></i> Deep Learning</span>
+                    <span class="skill-tag"><i class="fas fa-comment-dots" aria-hidden="true"></i> Prompt Engineering</span>
+                    <span class="skill-tag"><i class="fab fa-python" aria-hidden="true"></i> Python</span>
+                    <span class="skill-tag"><i class="fas fa-globe" aria-hidden="true"></i> Full-Stack Web</span>
+                    <span class="skill-tag"><i class="fas fa-mobile-alt" aria-hidden="true"></i> PWA</span>
+                    <span class="skill-tag"><i class="fas fa-shield-alt" aria-hidden="true"></i> Penetration Testing</span>
+                    <span class="skill-tag"><i class="fas fa-database" aria-hidden="true"></i> RAG Architecture</span>
+                    <span class="skill-tag"><i class="fas fa-microchip" aria-hidden="true"></i> IoT</span>
+                    <span class="skill-tag"><i class="fas fa-cloud" aria-hidden="true"></i> Google Cloud (Basic)</span>
+                    <span class="skill-tag"><i class="fas fa-project-diagram" aria-hidden="true"></i> Data Scraping</span>
+                    <span class="skill-tag"><i class="fas fa-satellite" aria-hidden="true"></i> Sentinel-2</span>
+                    <span class="skill-tag"><i class="fas fa-code-branch" aria-hidden="true"></i> Git / CI/CD</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== PROJECTS ===== -->
+        <section id="projects" class="section">
+            <div class="container">
+                <span class="section__label"><i class="fas fa-rocket" aria-hidden="true"></i> <span data-i18n="projects_label">Portofolio</span></span>
+                <h2 class="section__title"><span data-i18n="projects_title">Proyek Unggulan</span></h2>
+                <p class="section__desc" data-i18n="projects_desc">Solusi nyata yang saya bangun dari konsep hingga implementasi, mulai dari hackathon, riset, hingga eksplorasi teknologi web.</p>
+
+                <div class="projects__grid">
+
+                    <!-- Project 1: Agro Celebes -->
+                    <article class="project-card">
+                        <div class="project__image">
+                            <img src="assets/images/thumbnails/agro-celebes.png" alt="Agro Celebes screenshot" loading="lazy" width="600" height="340" decoding="async" />
+                        </div>
+                        <div class="project__content">
+                            <span class="project__tag" data-i18n="project_agro_tag">Top 80 Nasional 2026 · Hackathon</span>
+                            <h3 data-i18n="project_agro_title">Agro Celebes</h3>
+                            <p data-i18n="project_agro_desc">Agri-fintech PWA offline-first dengan AgroScore berbasis satelit Sentinel-2 dan sistem escrow pra-panen untuk mengurangi NPL.</p>
+                            <div class="project__tech">
+                                <span>PWA</span><span>Sentinel-2</span><span>RAG</span><span>Python</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="#" class="btn btn--small btn--primary" aria-label="Demo Agro Celebes (coming soon)"><span data-i18n="demo_label">Demo</span></a>
+                                <a href="#" class="btn btn--small btn--secondary" aria-label="GitHub Agro Celebes (private)"><span data-i18n="github_label">GitHub</span></a>
+                                <span class="project__status" data-i18n="status_private">Private Repository</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 2: Smart Tree Monitoring -->
+                    <article class="project-card">
+                        <div class="project__image">
+                            <img src="assets/images/thumbnails/smart-tree.png" alt="Smart Tree Monitoring screenshot" loading="lazy" width="600" height="340" decoding="async" />
+                        </div>
+                        <div class="project__content">
+                            <span class="project__tag" data-i18n="project_tree_tag">Capstone · IoT + AI</span>
+                            <h3 data-i18n="project_tree_title">Smart Tree Monitoring</h3>
+                            <p data-i18n="project_tree_desc">Sistem pemantauan cerdas untuk melestarikan spesies pohon dilindungi di Kebun Raya Jompie, Parepare, dengan sensor IoT dan dashboard real-time.</p>
+                            <div class="project__tech">
+                                <span>IoT</span><span>AI</span><span>Dashboard</span><span>Python</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="#" class="btn btn--small btn--secondary" aria-label="GitHub Smart Tree (private)"><span data-i18n="github_label">GitHub</span></a>
+                                <span class="project__status" data-i18n="status_private">Private Repository</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 3: KREASI-HP -->
+                    <article class="project-card">
+                        <div class="project__image">
+                            <img src="assets/images/thumbnails/kreasi-hp.png" alt="KREASI-HP screenshot" loading="lazy" width="600" height="340" decoding="async" />
+                        </div>
+                        <div class="project__content">
+                            <span class="project__tag" data-i18n="project_kreasi_tag">Inisiasi Sosial · Mentoring</span>
+                            <h3 data-i18n="project_kreasi_title">KREASI-HP</h3>
+                            <p data-i18n="project_kreasi_desc">Program literasi digital yang mengajarkan siswa SMA di Barru membuat website via smartphone, menggunakan AI prompting dan deploy ke publik. 8 siswa berhasil deploy website.</p>
+                            <div class="project__tech">
+                                <span>Web</span><span>AI Prompting</span><span>Mentoring</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://kreasi-hp.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--primary" aria-label="Kunjungi KREASI-HP"><span data-i18n="demo_label">Live Demo</span></a>
+                                <a href="https://ruminews.id/dobrak-keterbatasan-perangkat-mahasiswa-kkn-ith-angkatan-iii-sulap-smartphone-siswa-sman-5-barru-jadi-mesin-pencetak-website/" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--secondary" aria-label="Artikel tentang KREASI-HP"><span data-i18n="article_label">Artikel</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 4: Barru Information -->
+                    <article class="project-card">
+                        <div class="project__image">
+                            <img src="assets/images/thumbnails/barru-information.png" alt="Barru Information screenshot" loading="lazy" width="600" height="340" decoding="async" />
+                        </div>
+                        <div class="project__content">
+                            <span class="project__tag" data-i18n="project_barru_tag">Web Development · Informasi Publik</span>
+                            <h3 data-i18n="project_barru_title">Barru Information</h3>
+                            <p data-i18n="project_barru_desc">Platform informasi komprehensif tentang Kabupaten Barru, menyajikan data profil daerah, potensi lokal, dan layanan publik dalam satu portal digital.</p>
+                            <div class="project__tech">
+                                <span>React</span><span>Vercel</span><span>API</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://barru-information.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--primary" aria-label="Kunjungi Barru Information"><span data-i18n="demo_label">Live Demo</span></a>
+                                <a href="https://github.com/aksaex/barru-information" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--secondary" aria-label="GitHub Barru Information"><span data-i18n="github_label">GitHub</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 5: Sulawesi Guide -->
+                    <article class="project-card">
+                        <div class="project__image">
+                            <img src="assets/images/thumbnails/sulawesi-guide.png" alt="Sulawesi Guide screenshot" loading="lazy" width="600" height="340" decoding="async" />
+                        </div>
+                        <div class="project__content">
+                            <span class="project__tag" data-i18n="project_guide_tag">Travel · Web App</span>
+                            <h3 data-i18n="project_guide_title">Sulawesi Guide</h3>
+                            <p data-i18n="project_guide_desc">Panduan wisata interaktif untuk menjelajahi keindahan Sulawesi, menampilkan destinasi, budaya, dan rekomendasi perjalanan dengan antarmuka yang modern.</p>
+                            <div class="project__tech">
+                                <span>React</span><span>Vercel</span><span>UI/UX</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://sulawesi-guide.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--primary" aria-label="Kunjungi Sulawesi Guide"><span data-i18n="demo_label">Live Demo</span></a>
+                                <a href="https://github.com/aksaex/sulawesi-guide" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--secondary" aria-label="GitHub Sulawesi Guide"><span data-i18n="github_label">GitHub</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 6: Sulawesi Escape -->
+                    <article class="project-card">
+                        <div class="project__image">
+                            <img src="assets/images/thumbnails/sulawesi-escape.png" alt="Sulawesi Escape screenshot" loading="lazy" width="600" height="340" decoding="async" />
+                        </div>
+                        <div class="project__content">
+                            <span class="project__tag" data-i18n="project_escape_tag">Travel · Rekomendasi Liburan</span>
+                            <h3 data-i18n="project_escape_title">Sulawesi Escape</h3>
+                            <p data-i18n="project_escape_desc">Platform rekomendasi tempat liburan eksklusif di Sulawesi, membantu pengguna menemukan hidden gem dan merencanakan perjalanan yang tak terlupakan.</p>
+                            <div class="project__tech">
+                                <span>React</span><span>Vercel</span><span>API</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://sulawesi-escape.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--primary" aria-label="Kunjungi Sulawesi Escape"><span data-i18n="demo_label">Live Demo</span></a>
+                                <a href="https://github.com/aksaex/sulawesi-escape" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--secondary" aria-label="GitHub Sulawesi Escape"><span data-i18n="github_label">GitHub</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 7: Sulawesi Rasa -->
+                    <article class="project-card">
+                        <div class="project__image">
+                            <img src="assets/images/thumbnails/sulawesi-rasa.png" alt="Sulawesi Rasa screenshot" loading="lazy" width="600" height="340" decoding="async" />
+                        </div>
+                        <div class="project__content">
+                            <span class="project__tag" data-i18n="project_rasa_tag">Kuliner · Eksplorasi Rasa</span>
+                            <h3 data-i18n="project_rasa_title">Sulawesi Rasa</h3>
+                            <p data-i18n="project_rasa_desc">Eksplorasi kekayaan kuliner Sulawesi, menyajikan resep tradisional, lokasi kuliner, dan cerita di balik setiap hidangan khas daerah.</p>
+                            <div class="project__tech">
+                                <span>React</span><span>Vercel</span><span>Content</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://sulawesi-rasa.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--primary" aria-label="Kunjungi Sulawesi Rasa"><span data-i18n="demo_label">Live Demo</span></a>
+                                <a href="https://github.com/aksaex/sulawesi-rasa" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--secondary" aria-label="GitHub Sulawesi Rasa"><span data-i18n="github_label">GitHub</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 8: AgroTanya -->
+                    <article class="project-card">
+                        <div class="project__image">
+                            <img src="assets/images/thumbnails/agrotanya.png" alt="AgroTanya screenshot" loading="lazy" width="600" height="340" decoding="async" />
+                        </div>
+                        <div class="project__content">
+                            <span class="project__tag" data-i18n="project_agrotanya_tag">AI · Pertanian · Streamlit</span>
+                            <h3 data-i18n="project_agrotanya_title">AgroTanya</h3>
+                            <p data-i18n="project_agrotanya_desc">Platform tanya jawab berbasis AI untuk mendukung petani dan pelaku agribisnis dalam mengatasi permasalahan pertanian secara cepat dan akurat.</p>
+                            <div class="project__tech">
+                                <span>AI</span><span>Streamlit</span><span>Python</span><span>Netlify</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://agrotanya.netlify.app/" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--primary" aria-label="Kunjungi AgroTanya (Netlify)"><span data-i18n="demo_label">Live Demo</span></a>
+                                <a href="https://agrotanya.streamlit.app/" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--secondary" aria-label="Kunjungi AgroTanya (Streamlit)"><span data-i18n="streamlit_label">Streamlit App</span></a>
+                                <a href="https://github.com/aksaex/agrotanya" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--secondary" aria-label="GitHub AgroTanya"><span data-i18n="github_label">GitHub</span></a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Project 9: Object Detection & Tree Health -->
+                    <article class="project-card">
+                        <div class="project__image">
+                            <img src="assets/images/thumbnails/object-detection.png" alt="Object Detection & Tree Health screenshot" loading="lazy" width="600" height="340" decoding="async" />
+                        </div>
+                        <div class="project__content">
+                            <span class="project__tag" data-i18n="project_detection_tag">Computer Vision · AI</span>
+                            <h3 data-i18n="project_detection_title">Object Detection &amp; Tree Health</h3>
+                            <p data-i18n="project_detection_desc">Sistem deteksi objek dan analisis kesehatan pohon menggunakan computer vision, mendukung pemantauan lingkungan dan konservasi hutan secara efisien.</p>
+                            <div class="project__tech">
+                                <span>Python</span><span>YOLO</span><span>CV</span><span>AI</span>
+                            </div>
+                            <div class="project__links">
+                                <a href="https://github.com/aksaex/object-detection-and-tree-health" target="_blank" rel="noopener noreferrer" class="btn btn--small btn--primary" aria-label="GitHub Object Detection"><span data-i18n="github_label">GitHub</span></a>
+                                <span class="project__status" data-i18n="status_available">Code Available</span>
+                            </div>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EXPERIENCE ===== -->
+        <section id="experience" class="section section--dark">
+            <div class="container">
+                <span class="section__label"><i class="fas fa-briefcase" aria-hidden="true"></i> <span data-i18n="experience_label">Pengalaman</span></span>
+                <h2 class="section__title"><span data-i18n="experience_title">Kepemimpinan &amp; Kontribusi</span></h2>
+
+                <div class="experience__item">
+                    <h3 data-i18n="exp1_title">Initiator &amp; Tech Mentor — KREASI-HP</h3>
+                    <p class="experience__meta" data-i18n="exp1_meta">KKN ITH Batch III · Lompo Riaja, Barru · 2025</p>
+                    <ul>
+                        <li data-i18n="exp1_li1">Merintis program literasi digital yang mengajarkan coding via smartphone kepada siswa SMAN 5 Barru.</li>
+                        <li data-i18n="exp1_li2">Melatih siswa menggunakan AI prompting dan mendeploy website ke server publik.</li>
+                        <li data-i18n="exp1_li3">Membimbing 8 siswa untuk membuat portofolio digital yang dipamerkan di <a href="https://kreasi-hp.netlify.app/" target="_blank" rel="noopener noreferrer">gallery KREASI-HP</a>.</li>
+                    </ul>
+                </div>
+
+                <div class="experience__item">
+                    <h3 data-i18n="exp2_title">Founder &amp; Project Lead — Agro Celebes</h3>
+                    <p class="experience__meta" data-i18n="exp2_meta">PIDI Digdaya x Hackathon 2026 · Top 80 Nasional</p>
+                    <ul>
+                        <li data-i18n="exp2_li1">Memimpin tim membangun agri-fintech PWA offline-first dengan AgroScore berbasis Sentinel-2.</li>
+                        <li data-i18n="exp2_li2">Merancang sistem escrow pra-panen dan mekanisme kredit alternatif.</li>
+                        <li data-i18n="exp2_li3">Mengintegrasikan RAG architecture untuk analisis data pertanian.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== EDUCATION ===== -->
+        <section id="education" class="section">
+            <div class="container">
+                <span class="section__label"><i class="fas fa-graduation-cap" aria-hidden="true"></i> <span data-i18n="education_label">Pendidikan</span></span>
+                <h2 class="section__title"><span data-i18n="education_title">Perjalanan Akademik</span></h2>
+                <div class="education__item">
+                    <h3 data-i18n="edu_degree">Sarjana Ilmu Komputer</h3>
+                    <p class="education__meta" data-i18n="edu_meta">Institut Teknologi Bacharuddin Jusuf Habibie · 2023 – 2027</p>
+                    <ul>
+                        <li data-i18n="edu_li1">Spesialisasi: Artificial Intelligence dan Pengembangan Software</li>
+                        <li data-i18n="edu_li2">Semester 7 · IPK: 3.71</li>
+                        <li data-i18n="edu_li3">Aktif dalam kompetisi dan proyek riset</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CERTIFICATIONS ===== -->
+        <section id="certifications" class="section section--dark">
+            <div class="container">
+                <span class="section__label"><i class="fas fa-certificate" aria-hidden="true"></i> <span data-i18n="certs_label">Kredensial</span></span>
+                <h2 class="section__title"><span data-i18n="certs_title">Sertifikasi &amp; Lisensi</span></h2>
+                <p class="section__desc" data-i18n="certs_desc">Semua sertifikat dapat diverifikasi secara online.</p>
+                <div class="certs__grid">
+                    <!-- Dicoding -->
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Applied Machine Learning</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/L4PQW42JVPO1" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Building Machine Learning Systems</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/4EXG109J1PRL" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Learn Deep Learning Fundamentals</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/JMZVLQWKOXN9" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Learn Machine Learning for Beginners</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/1RXYWLK7KZVM" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Prompt Engineering for Software Dev</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/L4PQ98YVOPO1" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Learn Back-End with Python</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/EYX4QNEGWPDL" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Learn Google Cloud Basics</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/L4PQ9KJ24PO1" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Learn AI Basics</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/EYX4KE316PDL" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Practical AI for Productivity</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/NVP7N84EOZR0" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Getting Started with Python</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/ERZRLMW1QZYV" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Project Management Basics</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/4EXG38WMDZRL" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Financial Literacy</span>
+                            <span class="cert-issuer">Dicoding Indonesia</span>
+                            <a href="https://www.dicoding.com/certificates/2VX306KRJXYQ" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <!-- LPPI -->
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">DIGDAYA Practitioner Phase</span>
+                            <span class="cert-issuer">LPPI</span>
+                            <a href="https://credsverse.com/credentials/70c5cca3-cb24-4a2d-ba67-e3ed3e6964b4?preview=2" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">DIGDAYA Essential Phase</span>
+                            <span class="cert-issuer">LPPI</span>
+                            <a href="https://credsverse.com/credentials/a46903f1-9742-4aec-b398-6bf84480fdc6?preview=1" target="_blank" rel="noopener noreferrer" class="cert-link">Verify →</a>
+                        </div>
+                    </div>
+                    <!-- Merdeka Siber -->
+                    <div class="cert-card">
+                        <i class="fas fa-certificate" aria-hidden="true"></i>
+                        <div>
+                            <span class="cert-name">Certificate of Completion</span>
+                            <span class="cert-issuer">Merdeka Siber</span>
+                            <span class="cert-id">ID: MS/BOCSE/18/COC/007</span>
+                            <a href="https://merdekasiber.com/certificates/" target="_blank" rel="noopener noreferrer" class="cert-link">Verify (general)</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== ACHIEVEMENTS ===== -->
+        <section id="achievements" class="section">
+            <div class="container">
+                <span class="section__label"><i class="fas fa-trophy" aria-hidden="true"></i> <span data-i18n="achievements_label">Prestasi</span></span>
+                <h2 class="section__title"><span data-i18n="achievements_title">Penghargaan &amp; Pengakuan</span></h2>
+                <ul class="achievements__list">
+                    <li>
+                        <strong data-i18n="ach1_title">Top 80 Nasional</strong>
+                        <span data-i18n="ach1_desc">— PIDI Digdaya x Hackathon 2026 (Bank Indonesia &amp; OJK) dengan proyek Agro Celebes.</span>
+                    </li>
+                    <li>
+                        <strong data-i18n="ach2_title">8 Siswa Berhasil Deploy Website</strong>
+                        <span data-i18n="ach2_desc">— Program KREASI-HP, melampaui target awal.</span>
+                    </li>
+                    <li>
+                        <strong data-i18n="ach3_title">15 Sertifikasi Profesional</strong>
+                        <span data-i18n="ach3_desc">— Dari Dicoding, LPPI, dan Merdeka Siber dalam bidang AI, software, dan manajemen.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- ===== CONTACT ===== -->
+        <section id="contact" class="section section--dark">
+            <div class="container contact__inner">
+                <span class="section__label"><i class="fas fa-paper-plane" aria-hidden="true"></i> <span data-i18n="contact_label">Hubungi</span></span>
+                <h2 class="section__title"><span data-i18n="contact_title">Mari Berdiskusi</span></h2>
+                <p class="section__desc" style="max-width:600px; margin:0 auto 2rem;" data-i18n="contact_desc">
+                    Saya sedang mencari peluang magang sebagai AI Engineer atau Software Developer. 
+                    Jika Anda memiliki proyek menarik atau ingin berkolaborasi, jangan ragu untuk menghubungi saya.
+                </p>
+                <div class="contact__links">
+                    <a href="mailto:aksafigma@gmail.com" class="btn btn--primary"><i class="fas fa-envelope" aria-hidden="true"></i> aksafigma@gmail.com</a>
+                    <a href="https://www.linkedin.com/in/muh-aksa/" target="_blank" rel="noopener noreferrer" class="btn btn--secondary"><i class="fab fa-linkedin-in" aria-hidden="true"></i> LinkedIn</a>
+                    <a href="assets/cv/CV_Muh_Aksa_AI_SoftwareEngineer.pdf" download class="btn btn--secondary"><i class="fas fa-file-pdf" aria-hidden="true"></i> <span data-i18n="hero_btn_cv">Download CV</span></a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo">
+        <div class="container footer__inner">
+            <div class="footer__brand">
+                <span class="logo">aksa.</span>
+                <p data-i18n="footer_tagline">AI Engineer &amp; Software Developer</p>
+            </div>
+            <div class="footer__links">
+                <a href="#home" data-i18n="footer_home">Beranda</a>
+                <a href="#projects" data-i18n="footer_projects">Proyek</a>
+                <a href="#experience" data-i18n="footer_experience">Pengalaman</a>
+                <a href="#certifications" data-i18n="footer_certifications">Sertifikasi</a>
+            </div>
+            <div class="footer__social">
+                <a href="https://github.com/aksaex" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fab fa-github" aria-hidden="true"></i></a>
+                <a href="https://www.linkedin.com/in/muh-aksa/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                <a href="mailto:aksafigma@gmail.com" aria-label="Email"><i class="fas fa-envelope" aria-hidden="true"></i></a>
+            </div>
+            <p class="footer__copy">
+                &copy; <span id="year"></span> <span data-i18n="footer_copyright">Muh. Aksa · AI &amp; Software Engineering</span>
+            </p>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Kembali ke atas">
+        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+    </button>
+
+    <!-- ================================================================
+         JAVASCRIPT (Interaksi & Multilingual)
+         ================================================================ -->
+    <script>
+        (function() {
+            'use strict';
+
+            // --- HAMBURGER MENU ---
+            const hamburger = document.getElementById('hamburger');
+            const navLinks = document.getElementById('navLinks');
+            let isMenuOpen = false;
+
+            function toggleMenu(open) {
+                isMenuOpen = (open !== undefined) ? open : !isMenuOpen;
+                hamburger.setAttribute('aria-expanded', isMenuOpen);
+                navLinks.setAttribute('aria-hidden', !isMenuOpen);
+                document.body.style.overflow = isMenuOpen ? 'hidden' : '';
+            }
+
+            if (hamburger) {
+                hamburger.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    toggleMenu();
+                });
+            }
+
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && isMenuOpen) {
+                    toggleMenu(false);
+                    if (hamburger) hamburger.focus();
+                }
+            });
+
+            document.addEventListener('click', function(e) {
+                if (isMenuOpen && navLinks && !navLinks.contains(e.target) && !hamburger.contains(e.target)) {
+                    toggleMenu(false);
+                }
+            });
+
+            if (navLinks) {
+                navLinks.querySelectorAll('a').forEach(function(link) {
+                    link.addEventListener('click', function() {
+                        if (isMenuOpen) toggleMenu(false);
+                    });
+                });
+            }
+
+            // --- BACK TO TOP ---
+            const backBtn = document.getElementById('backToTop');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 600) {
+                    backBtn.classList.add('visible');
+                } else {
+                    backBtn.classList.remove('visible');
+                }
+            }, { passive: true });
+
+            backBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            // --- TYPING EFFECT (Hero) ---
+            const typingEl = document.getElementById('typingText');
+            const words = ['AI Engineer', 'Software Developer', 'Tech Mentor', 'Problem Solver'];
+            let wordIdx = 0,
+                charIdx = 0,
+                isDeleting = false;
+            let typingTimer = null;
+
+            const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (typingEl && !prefersReducedMotion) {
+                function typeEffect() {
+                    const current = words[wordIdx];
+                    if (isDeleting) {
+                        typingEl.textContent = current.substring(0, charIdx - 1);
+                        charIdx--;
+                    } else {
+                        typingEl.textContent = current.substring(0, charIdx + 1);
+                        charIdx++;
+                    }
+                    if (!isDeleting && charIdx === current.length) {
+                        isDeleting = true;
+                        typingTimer = setTimeout(typeEffect, 2000);
+                        return;
+                    }
+                    if (isDeleting && charIdx === 0) {
+                        isDeleting = false;
+                        wordIdx = (wordIdx + 1) % words.length;
+                        typingTimer = setTimeout(typeEffect, 400);
+                        return;
+                    }
+                    const speed = isDeleting ? 40 : 80;
+                    typingTimer = setTimeout(typeEffect, speed);
+                }
+                typingTimer = setTimeout(typeEffect, 600);
+            } else if (typingEl) {
+                typingEl.textContent = words[0];
+            }
+
+            // --- LANGUAGE SWITCHER (Multilingual) ---
+            const translations = {
+                id: {
+                    // Nav
+                    nav_about: 'Tentang',
+                    nav_skills: 'Keahlian',
+                    nav_projects: 'Proyek',
+                    nav_experience: 'Pengalaman',
+                    nav_education: 'Pendidikan',
+                    nav_certifications: 'Sertifikasi',
+                    nav_achievements: 'Prestasi',
+                    nav_contact: 'Hubungi',
+                    // Hero
+                    hero_badge: 'Terbuka untuk Magang',
+                    hero_sub1: 'AI Engineer & Software Developer',
+                    hero_typing: 'mahasiswa ITH',
+                    hero_desc: 'Saya membangun sistem AI terapan dan perangkat lunak produksi untuk menyelesaikan masalah nyata. Finalis Top 80 Nasional DIGDAYA x HACKATHON 2026 dan penggagas program literasi digital KREASI-HP.',
+                    hero_btn_projects: 'Lihat Proyek',
+                    hero_btn_cv: 'Download CV',
+                    // Proof
+                    proof_1: 'Top 80 Nasional Hackathon',
+                    proof_2: 'Sertifikasi & Kredensial',
+                    proof_3: 'Siswa Binaan Deploy Website',
+                    proof_4: 'Proyek Flagship',
+                    // About
+                    about_label: 'Tentang Saya',
+                    about_title_before: 'Membangun',
+                    about_title_highlight: 'Dampak',
+                    about_title_after: 'Lewat Kode',
+                    about_p1: 'Saya <strong>Muh. Aksa</strong>, mahasiswa semester 7 Ilmu Komputer di <strong>Institut Teknologi Bacharuddin Jusuf Habibie (ITH)</strong> dengan spesialisasi <strong>Artificial Intelligence</strong> dan <strong>Pengembangan Software</strong>.',
+                    about_p2: 'Saya aktif menerjemahkan pembelajaran kelas menjadi solusi praktis melalui hackathon nasional, program komunitas, dan proyek independen. Pendiri <strong>Agro Celebes</strong> — agri-fintech dengan PWA offline-first dan sistem kredit berbasis satelit Sentinel-2 — serta penggagas <strong>KREASI-HP</strong>, program literasi digital yang mengajarkan coding via smartphone kepada 8 siswa SMA di Barru.',
+                    about_p3: 'Saya percaya bahwa teknologi harus memberikan dampak sosial yang nyata. Saya terbuka untuk peluang <strong>magang AI Engineer</strong> atau <strong>Software Developer</strong>.',
+                    about_highlight: '<strong>Barru, Sulawesi Selatan</strong> · Lulus 2027',
+                    about_lang_title: 'Bahasa',
+                    about_lang_ind: 'Indonesia — Native',
+                    about_lang_eng: 'Inggris — Professional Working Proficiency',
+                    about_interests: 'Minat',
+                    about_i1: 'Applied AI / Machine Learning',
+                    about_i2: 'RAG & LLM',
+                    about_i3: 'Software Architecture',
+                    about_i4: 'Social Impact Technology',
+                    // Skills
+                    skills_label: 'Keahlian Teknis',
+                    skills_title: 'Tech Stack & Spesialisasi',
+                    skills_desc: 'Kombinasi antara kecerdasan buatan, rekayasa perangkat lunak, dan keamanan siber.',
+                    // Projects
+                    projects_label: 'Portofolio',
+                    projects_title: 'Proyek Unggulan',
+                    projects_desc: 'Solusi nyata yang saya bangun dari konsep hingga implementasi, mulai dari hackathon, riset, hingga eksplorasi teknologi web.',
+                    demo_label: 'Demo',
+                    github_label: 'GitHub',
+                    streamlit_label: 'Streamlit App',
+                    article_label: 'Artikel',
+                    status_private: 'Private Repository',
+                    status_available: 'Code Available',
+                    project_agro_tag: 'Top 80 Nasional 2026 · Hackathon',
+                    project_agro_title: 'Agro Celebes',
+                    project_agro_desc: 'Agri-fintech PWA offline-first dengan AgroScore berbasis satelit Sentinel-2 dan sistem escrow pra-panen untuk mengurangi NPL.',
+                    project_tree_tag: 'Capstone · IoT + AI',
+                    project_tree_title: 'Smart Tree Monitoring',
+                    project_tree_desc: 'Sistem pemantauan cerdas untuk melestarikan spesies pohon dilindungi di Kebun Raya Jompie, Parepare, dengan sensor IoT dan dashboard real-time.',
+                    project_kreasi_tag: 'Inisiasi Sosial · Mentoring',
+                    project_kreasi_title: 'KREASI-HP',
+                    project_kreasi_desc: 'Program literasi digital yang mengajarkan siswa SMA di Barru membuat website via smartphone, menggunakan AI prompting dan deploy ke publik. 8 siswa berhasil deploy website.',
+                    project_barru_tag: 'Web Development · Informasi Publik',
+                    project_barru_title: 'Barru Information',
+                    project_barru_desc: 'Platform informasi komprehensif tentang Kabupaten Barru, menyajikan data profil daerah, potensi lokal, dan layanan publik dalam satu portal digital.',
+                    project_guide_tag: 'Travel · Web App',
+                    project_guide_title: 'Sulawesi Guide',
+                    project_guide_desc: 'Panduan wisata interaktif untuk menjelajahi keindahan Sulawesi, menampilkan destinasi, budaya, dan rekomendasi perjalanan dengan antarmuka yang modern.',
+                    project_escape_tag: 'Travel · Rekomendasi Liburan',
+                    project_escape_title: 'Sulawesi Escape',
+                    project_escape_desc: 'Platform rekomendasi tempat liburan eksklusif di Sulawesi, membantu pengguna menemukan hidden gem dan merencanakan perjalanan yang tak terlupakan.',
+                    project_rasa_tag: 'Kuliner · Eksplorasi Rasa',
+                    project_rasa_title: 'Sulawesi Rasa',
+                    project_rasa_desc: 'Eksplorasi kekayaan kuliner Sulawesi, menyajikan resep tradisional, lokasi kuliner, dan cerita di balik setiap hidangan khas daerah.',
+                    project_agrotanya_tag: 'AI · Pertanian · Streamlit',
+                    project_agrotanya_title: 'AgroTanya',
+                    project_agrotanya_desc: 'Platform tanya jawab berbasis AI untuk mendukung petani dan pelaku agribisnis dalam mengatasi permasalahan pertanian secara cepat dan akurat.',
+                    project_detection_tag: 'Computer Vision · AI',
+                    project_detection_title: 'Object Detection & Tree Health',
+                    project_detection_desc: 'Sistem deteksi objek dan analisis kesehatan pohon menggunakan computer vision, mendukung pemantauan lingkungan dan konservasi hutan secara efisien.',
+                    // Experience
+                    experience_label: 'Pengalaman',
+                    experience_title: 'Kepemimpinan & Kontribusi',
+                    exp1_title: 'Initiator & Tech Mentor — KREASI-HP',
+                    exp1_meta: 'KKN ITH Batch III · Lompo Riaja, Barru · 2025',
+                    exp1_li1: 'Merintis program literasi digital yang mengajarkan coding via smartphone kepada siswa SMAN 5 Barru.',
+                    exp1_li2: 'Melatih siswa menggunakan AI prompting dan mendeploy website ke server publik.',
+                    exp1_li3: 'Membimbing 8 siswa untuk membuat portofolio digital yang dipamerkan di <a href="https://kreasi-hp.netlify.app/" target="_blank" rel="noopener noreferrer">gallery KREASI-HP</a>.',
+                    exp2_title: 'Founder & Project Lead — Agro Celebes',
+                    exp2_meta: 'PIDI Digdaya x Hackathon 2026 · Top 80 Nasional',
+                    exp2_li1: 'Memimpin tim membangun agri-fintech PWA offline-first dengan AgroScore berbasis Sentinel-2.',
+                    exp2_li2: 'Merancang sistem escrow pra-panen dan mekanisme kredit alternatif.',
+                    exp2_li3: 'Mengintegrasikan RAG architecture untuk analisis data pertanian.',
+                    // Education
+                    education_label: 'Pendidikan',
+                    education_title: 'Perjalanan Akademik',
+                    edu_degree: 'Sarjana Ilmu Komputer',
+                    edu_meta: 'Institut Teknologi Bacharuddin Jusuf Habibie · 2023 – 2027',
+                    edu_li1: 'Spesialisasi: Artificial Intelligence dan Pengembangan Software',
+                    edu_li2: 'Semester 7 · IPK: 3.71',
+                    edu_li3: 'Aktif dalam kompetisi dan proyek riset',
+                    // Certifications
+                    certs_label: 'Kredensial',
+                    certs_title: 'Sertifikasi & Lisensi',
+                    certs_desc: 'Semua sertifikat dapat diverifikasi secara online.',
+                    // Achievements
+                    achievements_label: 'Prestasi',
+                    achievements_title: 'Penghargaan & Pengakuan',
+                    ach1_title: 'Top 80 Nasional',
+                    ach1_desc: '— PIDI Digdaya x Hackathon 2026 dengan proyek Agro Celebes.',
+                    ach2_title: '8 Siswa Berhasil Deploy Website',
+                    ach2_desc: '— Program KREASI-HP, melampaui target awal.',
+                    ach3_title: '15 Sertifikasi Profesional',
+                    ach3_desc: '— Dari Dicoding, LPPI, dan Merdeka Siber dalam bidang AI, software, dan manajemen.',
+                    // Contact
+                    contact_label: 'Hubungi',
+                    contact_title: 'Mari Berdiskusi',
+                    contact_desc: 'Saya sedang mencari peluang magang sebagai AI Engineer atau Software Developer. Jika Anda memiliki proyek menarik atau ingin berkolaborasi, jangan ragu untuk menghubungi saya.',
+                    // Footer
+                    footer_tagline: 'AI Engineer & Software Developer',
+                    footer_home: 'Beranda',
+                    footer_projects: 'Proyek',
+                    footer_experience: 'Pengalaman',
+                    footer_certifications: 'Sertifikasi',
+                    footer_copyright: 'Muh. Aksa · AI & Software Engineering'
+                },
+                en: {
+                    nav_about: 'About',
+                    nav_skills: 'Skills',
+                    nav_projects: 'Projects',
+                    nav_experience: 'Experience',
+                    nav_education: 'Education',
+                    nav_certifications: 'Certifications',
+                    nav_achievements: 'Achievements',
+                    nav_contact: 'Contact',
+                    hero_badge: 'Open for Internship',
+                    hero_sub1: 'AI Engineer & Software Developer',
+                    hero_typing: 'ITH student',
+                    hero_desc: 'I build applied AI systems and production-ready software to solve real-world problems. National Top 80 Finalist at Hackathon 2026 and initiator of KREASI-HP digital literacy program.',
+                    hero_btn_projects: 'View Projects',
+                    hero_btn_cv: 'Download CV',
+                    proof_1: 'National Top 80 Hackathon',
+                    proof_2: 'Certifications & Credentials',
+                    proof_3: 'Students Mentored to Deploy',
+                    proof_4: 'Flagship Projects',
+                    about_label: 'About Me',
+                    about_title_before: 'Building',
+                    about_title_highlight: 'Impact',
+                    about_title_after: 'Through Code',
+                    about_p1: 'I am <strong>Muh. Aksa</strong>, a 7th-semester Computer Science student at <strong>Bacharuddin Jusuf Habibie Institute of Technology (ITH)</strong>, specializing in <strong>Artificial Intelligence</strong> and <strong>Software Development</strong>.',
+                    about_p2: 'I actively translate classroom learning into practical solutions through national hackathons, community programs, and independent projects. I founded <strong>Agro Celebes</strong> — an agri-fintech PWA offline-first with Sentinel-2-based credit scoring — and initiated <strong>KREASI-HP</strong>, a digital literacy program teaching coding via smartphones to 8 high school students in Barru.',
+                    about_p3: 'I believe technology should create real social impact. I am open to <strong>AI Engineer</strong> or <strong>Software Developer</strong> internship opportunities.',
+                    about_highlight: '<strong>Barru, South Sulawesi</strong> · Graduating 2027',
+                    about_lang_title: 'Languages',
+                    about_lang_ind: 'Indonesian — Native',
+                    about_lang_eng: 'English — Professional Working Proficiency',
+                    about_interests: 'Interests',
+                    about_i1: 'Applied AI / Machine Learning',
+                    about_i2: 'RAG & LLM',
+                    about_i3: 'Software Architecture',
+                    about_i4: 'Social Impact Technology',
+                    skills_label: 'Technical Skills',
+                    skills_title: 'Tech Stack & Specializations',
+                    skills_desc: 'A blend of artificial intelligence, software engineering, and cybersecurity.',
+                    projects_label: 'Portfolio',
+                    projects_title: 'Featured Projects',
+                    projects_desc: 'Real solutions I built from concept to implementation, from hackathons, research, to web technology explorations.',
+                    demo_label: 'Demo',
+                    github_label: 'GitHub',
+                    streamlit_label: 'Streamlit App',
+                    article_label: 'Article',
+                    status_private: 'Private Repository',
+                    status_available: 'Code Available',
+                    project_agro_tag: 'National Top 80 2026 · Hackathon',
+                    project_agro_title: 'Agro Celebes',
+                    project_agro_desc: 'Agri-fintech PWA offline-first with Sentinel-2 satellite-based AgroScore and pre-harvest escrow system to reduce NPL.',
+                    project_tree_tag: 'Capstone · IoT + AI',
+                    project_tree_title: 'Smart Tree Monitoring',
+                    project_tree_desc: 'Intelligent monitoring system to preserve protected tree species at Jompie Botanical Garden, Parepare, with IoT sensors and real-time dashboard.',
+                    project_kreasi_tag: 'Social Initiative · Mentoring',
+                    project_kreasi_title: 'KREASI-HP',
+                    project_kreasi_desc: 'Digital literacy program teaching high school students in Barru to build websites via smartphones using AI prompting and public deployment. 8 students successfully deployed.',
+                    project_barru_tag: 'Web Development · Public Info',
+                    project_barru_title: 'Barru Information',
+                    project_barru_desc: 'Comprehensive information platform about Barru Regency, presenting regional profiles, local potential, and public services in one digital portal.',
+                    project_guide_tag: 'Travel · Web App',
+                    project_guide_title: 'Sulawesi Guide',
+                    project_guide_desc: 'Interactive travel guide to explore the beauty of Sulawesi, featuring destinations, culture, and travel recommendations with a modern interface.',
+                    project_escape_tag: 'Travel · Vacation Recommendations',
+                    project_escape_title: 'Sulawesi Escape',
+                    project_escape_desc: 'Exclusive vacation recommendation platform in Sulawesi, helping users find hidden gems and plan unforgettable journeys.',
+                    project_rasa_tag: 'Culinary · Taste Exploration',
+                    project_rasa_title: 'Sulawesi Rasa',
+                    project_rasa_desc: 'Exploration of Sulawesi\'s culinary richness, presenting traditional recipes, culinary spots, and stories behind each regional dish.',
+                    project_agrotanya_tag: 'AI · Agriculture · Streamlit',
+                    project_agrotanya_title: 'AgroTanya',
+                    project_agrotanya_desc: 'AI-powered Q&A platform to support farmers and agribusiness actors in solving agricultural problems quickly and accurately.',
+                    project_detection_tag: 'Computer Vision · AI',
+                    project_detection_title: 'Object Detection & Tree Health',
+                    project_detection_desc: 'Object detection and tree health analysis system using computer vision, supporting environmental monitoring and forest conservation efficiently.',
+                    experience_label: 'Experience',
+                    experience_title: 'Leadership & Contributions',
+                    exp1_title: 'Initiator & Tech Mentor — KREASI-HP',
+                    exp1_meta: 'KKN ITH Batch III · Lompo Riaja, Barru · 2025',
+                    exp1_li1: 'Pioneered a digital literacy program teaching coding via smartphones to students at SMAN 5 Barru.',
+                    exp1_li2: 'Trained students in AI prompting and deployed websites to public servers.',
+                    exp1_li3: 'Mentored 8 students to build digital portfolios showcased on <a href="https://kreasi-hp.netlify.app/" target="_blank" rel="noopener noreferrer">KREASI-HP gallery</a>.',
+                    exp2_title: 'Founder & Project Lead — Agro Celebes',
+                    exp2_meta: 'PIDI Digdaya x Hackathon 2026 · National Top 80',
+                    exp2_li1: 'Led the team to build an agri-fintech PWA offline-first with Sentinel-2 based AgroScore.',
+                    exp2_li2: 'Designed pre-harvest escrow system and alternative credit mechanisms.',
+                    exp2_li3: 'Integrated RAG architecture for agricultural data analysis.',
+                    education_label: 'Education',
+                    education_title: 'Academic Journey',
+                    edu_degree: 'Bachelor of Computer Science',
+                    edu_meta: 'Bacharuddin Jusuf Habibie Institute of Technology · 2023 – 2027',
+                    edu_li1: 'Specialization: Artificial Intelligence and Software Development',
+                    edu_li2: 'Semester 7 · GPA: 3.71',
+                    edu_li3: 'Active in competitions and research projects',
+                    certs_label: 'Credentials',
+                    certs_title: 'Certifications & Licenses',
+                    certs_desc: 'All certificates are verifiable online.',
+                    achievements_label: 'Achievements',
+                    achievements_title: 'Awards & Recognitions',
+                    ach1_title: 'National Top 80',
+                    ach1_desc: '— PIDI Digdaya x Hackathon 2026 with Agro Celebes project.',
+                    ach2_title: '8 Students Successfully Deployed Websites',
+                    ach2_desc: '— KREASI-HP program, exceeding initial target.',
+                    ach3_title: '15 Professional Certifications',
+                    ach3_desc: '— From Dicoding, LPPI, and Merdeka Siber in AI, software, and management.',
+                    contact_label: 'Contact',
+                    contact_title: "Let's Talk",
+                    contact_desc: "I am looking for internship opportunities as an AI Engineer or Software Developer. If you have an interesting project or want to collaborate, feel free to reach out.",
+                    footer_tagline: 'AI Engineer & Software Developer',
+                    footer_home: 'Home',
+                    footer_projects: 'Projects',
+                    footer_experience: 'Experience',
+                    footer_certifications: 'Certifications',
+                    footer_copyright: 'Muh. Aksa · AI & Software Engineering'
+                }
+            };
+
+            const langBtns = document.querySelectorAll('.lang-btn');
+            let currentLang = localStorage.getItem('lang') || 'id';
+
+            function applyLanguage(lang) {
+                if (!translations[lang]) return;
+                currentLang = lang;
+                localStorage.setItem('lang', lang);
+                document.documentElement.lang = lang;
+
+                document.querySelectorAll('[data-i18n]').forEach(el => {
+                    const key = el.getAttribute('data-i18n');
+                    const value = translations[lang]?.[key];
+                    if (value !== undefined) {
+                        if (/<[^>]*>/.test(value)) {
+                            el.innerHTML = value;
+                        } else {
+                            el.textContent = value;
+                        }
+                    }
+                });
+
+                // Update typing text (hero)
+                const typingEl = document.querySelector('.hero__typing');
+                if (typingEl && translations[lang].hero_typing) {
+                    typingEl.textContent = translations[lang].hero_typing;
+                }
+
+                // Update active state
+                langBtns.forEach(btn => {
+                    const isActive = btn.getAttribute('data-lang') === lang;
+                    btn.classList.toggle('active', isActive);
+                    btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+                });
+            }
+
+            langBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const lang = this.getAttribute('data-lang');
+                    if (lang && lang !== currentLang) {
+                        applyLanguage(lang);
+                    }
+                });
+            });
+
+            // Apply default language
+            applyLanguage(currentLang);
+
+            // Update year in footer
+            document.getElementById('year').textContent = new Date().getFullYear();
+
+            // --- SCROLL REVEAL (Intersection Observer) ---
+            const revealElements = document.querySelectorAll('.section, .project-card, .experience__item, .education__item, .cert-card, .achievements__list li');
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver(function(entries) {
+                    entries.forEach(function(entry) {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+                revealElements.forEach(function(el) {
+                    el.style.opacity = '0';
+                    el.style.transform = 'translateY(24px)';
+                    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
+                    observer.observe(el);
+                });
+
+                const styleSheet = document.createElement('style');
+                styleSheet.textContent = `
+                            .is-visible { opacity: 1 !important; transform: translateY(0) !important; }
+                            @media (prefers-reduced-motion: reduce) {
+                                .section, .project-card, .experience__item, .education__item, .cert-card, .achievements__list li {
+                                    opacity: 1 !important;
+                                    transform: none !important;
+                                    transition: none !important;
+                                }
+                            }
+                        `;
+                document.head.appendChild(styleSheet);
+            } else {
+                revealElements.forEach(function(el) {
+                    el.style.opacity = '1';
+                    el.style.transform = 'none';
+                });
+            }
+
+            // Prevent default on empty hash links
+            document.querySelectorAll('a[href="#"]').forEach(function(anchor) {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                });
+            });
+
+            console.log('🚀 Muh. Aksa Portfolio — Multilingual Professional Edition');
+        })();
+    </script>
+
+</body>
+</html>
