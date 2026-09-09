@@ -1184,3 +1184,10 @@ img {
         transform: none !important;
     }
 }
+
+/* Tambahkan di bagian akhir file style.css Anda */
+.overlay, .splash-screen, .nav-overlay {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
