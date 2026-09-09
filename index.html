@@ -35,7 +35,7 @@
 
     <style>
         /* ================================================================
-           1.  RESET & VARIABLES
+           1.  RESET & VARIABLES (tidak diubah)
            ================================================================ */
         *,
         *::before,
@@ -146,7 +146,7 @@
         }
 
         /* ================================================================
-           BUTTONS
+           BUTTONS (tidak diubah)
            ================================================================ */
         .btn {
             display: inline-flex;
@@ -200,7 +200,7 @@
         }
 
         /* ================================================================
-           NAVBAR
+           NAVBAR (tidak diubah)
            ================================================================ */
         .navbar {
             position: fixed;
@@ -232,7 +232,6 @@
             text-decoration: none;
         }
 
-        /* Hamburger */
         .hamburger {
             display: flex;
             flex-direction: column;
@@ -265,7 +264,6 @@
             background: var(--color-accent);
         }
 
-        /* Nav Links Mobile (drawer) */
         .nav-links {
             position: fixed;
             top: 0;
@@ -321,7 +319,7 @@
             transform: translateX(0) !important;
         }
 
-        /* LANGUAGE SWITCHER (Segmented Control) */
+        /* LANGUAGE SWITCHER */
         .lang-switcher {
             display: flex;
             align-items: center;
@@ -374,14 +372,12 @@
             user-select: none;
         }
 
-        /* Desktop: switcher di navbar */
         .lang-switcher--desktop {
             display: none;
             margin-left: auto;
             margin-right: 0.5rem;
         }
 
-        /* Mobile: switcher di dalam menu */
         .lang-switcher--mobile {
             display: flex;
             margin-top: 1.5rem;
@@ -575,7 +571,7 @@
         }
 
         /* ================================================================
-           SECTIONS
+           SECTIONS (umum)
            ================================================================ */
         .section {
             padding: 4rem 0;
@@ -1140,7 +1136,7 @@
         }
 
         /* ================================================================
-           AKSESIBILITAS: FOCUS & REDUCED MOTION
+           AKSESIBILITAS
            ================================================================ */
         :focus-visible {
             outline: 2px solid var(--color-accent);
@@ -1179,6 +1175,31 @@
                 transform: none !important;
             }
         }
+
+        /* ================================================================
+           FIX: PASTIKAN PROYEK LANGSUNG TERLIHAT (TANPA SCROLL REVEAL)
+           ================================================================ */
+        .project-card,
+        .section,
+        .experience__item,
+        .education__item,
+        .cert-card,
+        .achievements__list li {
+            opacity: 1 !important;
+            transform: none !important;
+            transition: none !important;
+        }
+
+        /* Pastikan tidak ada overlay yang menutupi */
+        .overlay,
+        .splash-screen,
+        .nav-overlay,
+        [class*="overlay"],
+        [class*="splash"] {
+            display: none !important;
+            opacity: 0 !important;
+            pointer-events: none !important;
+        }
     </style>
 </head>
 
@@ -1208,11 +1229,11 @@
                     <li><a href="#contact" class="nav-cta" data-i18n="nav_contact">Hubungi</a></li>
                 </ul>
 
-      <!-- Language Switcher - Desktop -->
+                <!-- Language Switcher - Desktop (sementara masih pakai divider) -->
                 <div class="lang-switcher lang-switcher--desktop" role="group" aria-label="Pilihan bahasa">
-                   <button class="lang-btn active" data-lang="id" aria-pressed="true">ID</button>
-                   <span class="lang-divider">|</span>
-                   <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+                    <button class="lang-btn active" data-lang="id" aria-pressed="true">ID</button>
+                    <span class="lang-divider">|</span>
+                    <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
                 </div>
                 <!-- Language Switcher - Mobile -->
                 <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Pilihan bahasa">
@@ -1349,7 +1370,6 @@
                 <p class="section__desc" data-i18n="projects_desc">Solusi nyata yang saya bangun dari konsep hingga implementasi, mulai dari hackathon, riset, hingga eksplorasi teknologi web.</p>
 
                 <div class="projects__grid">
-
                     <!-- Project 1: Agro Celebes -->
                     <article class="project-card">
                         <div class="project__image">
@@ -1522,7 +1542,6 @@
                             </div>
                         </div>
                     </article>
-
                 </div>
             </div>
         </section>
@@ -1778,7 +1797,7 @@
     </button>
 
     <!-- ================================================================
-         JAVASCRIPT (Interaksi & Multilingual)
+         JAVASCRIPT (Interaksi & Multilingual) — TANPA SCROLL REVEAL
          ================================================================ -->
     <script>
         (function() {
@@ -2171,44 +2190,10 @@
             // Update year in footer
             document.getElementById('year').textContent = new Date().getFullYear();
 
-            // --- SCROLL REVEAL (Intersection Observer) ---
-            const revealElements = document.querySelectorAll('.section, .project-card, .experience__item, .education__item, .cert-card, .achievements__list li');
-
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver(function(entries) {
-                    entries.forEach(function(entry) {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
-
-                revealElements.forEach(function(el) {
-                    el.style.opacity = '0';
-                    el.style.transform = 'translateY(24px)';
-                    el.style.transition = 'opacity 0.7s ease, transform 0.7s ease';
-                    observer.observe(el);
-                });
-
-                const styleSheet = document.createElement('style');
-                styleSheet.textContent = `
-                            .is-visible { opacity: 1 !important; transform: translateY(0) !important; }
-                            @media (prefers-reduced-motion: reduce) {
-                                .section, .project-card, .experience__item, .education__item, .cert-card, .achievements__list li {
-                                    opacity: 1 !important;
-                                    transform: none !important;
-                                    transition: none !important;
-                                }
-                            }
-                        `;
-                document.head.appendChild(styleSheet);
-            } else {
-                revealElements.forEach(function(el) {
-                    el.style.opacity = '1';
-                    el.style.transform = 'none';
-                });
-            }
+            // ============================================================
+            //  TIDAK ADA SCROLL REVEAL — SEMUA ELEMEN SUDAH TERLIHAT
+            //  (CSS sudah memaksa opacity:1 dan transform:none)
+            // ============================================================
 
             // Prevent default on empty hash links
             document.querySelectorAll('a[href="#"]').forEach(function(anchor) {
@@ -2217,7 +2202,7 @@
                 });
             });
 
-            console.log('🚀 Muh. Aksa Portfolio — Multilingual Professional Edition');
+            console.log('🚀 Muh. Aksa Portfolio — Final (tanpa scroll reveal)');
         })();
     </script>
 
